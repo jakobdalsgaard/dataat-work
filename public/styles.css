@@ -1,0 +1,166 @@
+/* Cloudflare-like short stylesheet
+   Usage: add the classes used below to your HTML elements:
+   - <header class="cf-header">, <nav class="cf-nav">, hero -> <section class="cf-hero">,
+   - CTA buttons use .cf-btn, cards use .cf-card, page container .cf-container
+*/
+
+:root{
+  --brand-1: #ff6a00;    /* strong orange */
+  --brand-2: #ff8c42;    /* lighter orange */
+  --muted: #6b7280;
+  --bg: #0f1724;
+  --card-bg: rgba(255,255,255,0.03);
+  --glass: rgba(255,255,255,0.04);
+  --radius: 14px;
+  --fw-strong: 700;
+  --max-width: 1180px;
+  --gutter: 1.25rem;
+  color-scheme: dark;
+}
+
+/* base reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,var(--bg) 0%, #071020 100%);
+  color:#f8fafc;
+  -webkit-font-smoothing:antialiased;
+  line-height:1.45;
+  padding:2rem;
+}
+
+/* page container */
+.cf-container{
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+/* header / nav */
+.cf-header{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  margin-bottom:2.25rem;
+}
+.cf-brand{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+  text-decoration:none;
+  color:inherit;
+}
+.cf-logo{
+  width:40px;
+  height:40px;
+  border-radius:10px;
+  background: conic-gradient(from 180deg at 50% 50%, var(--brand-2), var(--brand-1));
+  box-shadow: 0 6px 18px rgba(255,106,0,0.12), inset 0 -4px 12px rgba(0,0,0,0.18);
+}
+.cf-title{font-weight:var(--fw-strong); font-size:1.05rem; letter-spacing:0.2px}
+
+/* simplified nav */
+.cf-nav{display:flex; gap:1rem; align-items:center;}
+.cf-nav a{color:var(--muted); text-decoration:none; font-size:.95rem}
+.cf-nav a:hover{color:#fff}
+
+/* hero */
+.cf-hero{
+  display:grid;
+  grid-template-columns: 1fr 420px;
+  gap:2.25rem;
+  align-items:center;
+  margin-bottom:2.5rem;
+}
+.cf-hero .hero-card{
+  padding:2.25rem;
+  border-radius:var(--radius);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  box-shadow: 0 12px 40px rgba(2,6,23,0.6);
+  backdrop-filter: blur(6px);
+}
+
+/* hero typography */
+.cf-hero h1{
+  font-size: clamp(1.6rem, 3.6vw, 2.6rem);
+  margin:0 0 .6rem 0;
+  line-height:1.05;
+  letter-spacing:-0.6px;
+}
+.cf-hero p{margin:0 0 1.4rem 0; color:var(--muted); font-size:1rem}
+
+/* call-to-action style */
+.cf-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  padding:.75rem 1.1rem;
+  border-radius:12px;
+  font-weight:600;
+  text-decoration:none;
+  border: none;
+  cursor:pointer;
+  background: linear-gradient(90deg, var(--brand-1), var(--brand-2));
+  color: white;
+  box-shadow: 0 8px 24px rgba(255,106,0,0.16);
+}
+.cf-btn.secondary{
+  background:transparent;
+  color: #fff;
+  border:1px solid rgba(255,255,255,0.06);
+  box-shadow:none;
+}
+
+/* three small feature cards */
+.cf-grid{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap:1rem;
+  margin-top:1.4rem;
+}
+.cf-card{
+  padding:1.1rem;
+  border-radius:12px;
+  background: var(--card-bg);
+  border:1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 6px 22px rgba(3,8,20,0.45);
+}
+.cf-card h4{margin:0 0 .35rem 0; font-size:1rem}
+.cf-card p{margin:0; color:var(--muted); font-size:.92rem}
+
+/* subtle decorative sun / grid used behind hero (simulates Cloudflare circular motif) */
+.cf-hero::before{
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  right:calc(50% - 80px);
+  top:40px;
+  transform:translateX(45%);
+  border-radius:50%;
+  pointer-events:none;
+  filter: blur(34px);
+  background: radial-gradient(circle at 30% 30%, rgba(255,120,30,0.12), rgba(255,120,30,0.04) 30%, transparent 35%);
+  z-index:0;
+}
+
+/* footer */
+.cf-footer{
+  margin-top:3rem;
+  color:var(--muted);
+  font-size:.9rem;
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+}
+
+/* responsive */
+@media (max-width:960px){
+  .cf-hero{grid-template-columns: 1fr; padding-top:1rem}
+  .cf-hero::before{display:none}
+  .cf-grid{grid-template-columns: 1fr; gap:.9rem}
+  .cf-header{flex-direction:column; align-items:flex-start; gap:.6rem}
+}
