@@ -5,6 +5,10 @@
 */
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display');
 
+#display-report {
+	width: 100%;
+	text-align: center;
+}
 #cloudflare_logo {                                                                                                                                                                                            
   position: fixed;                                                                                                                                                                                            
   right: 0;                                                                                                                                                                                                   

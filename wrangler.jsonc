@@ -14,6 +14,22 @@
 		"enabled": true
 	},
 	  "main": "src/index.js",
+	  "durable_objects": {
+            "bindings": [
+            {
+               "class_name": "ReportObject",
+            "name": "REPORT_OBJECTS"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": [
+        "ReportObject"
+      ]
+    }
+  ],
 
 	/**
 	 * Smart Placement
