@@ -3,6 +3,14 @@
    - <header class="cf-header">, <nav class="cf-nav">, hero -> <section class="cf-hero">,
    - CTA buttons use .cf-btn, cards use .cf-card, page container .cf-container
 */
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display');
+
+#cloudflare_logo {                                                                                                                                                                                            
+  position: fixed;                                                                                                                                                                                            
+  right: 0;                                                                                                                                                                                                   
+  top: 0;                                                                                                                                                                                                     
+  z-index: -5;
+}                                                                                                                                                                                                             
 
 :root{
   --brand-1: #ff6a00;    /* strong orange */
@@ -18,17 +26,22 @@
   color-scheme: dark;
 }
 
+
 /* base reset */
-*{box-sizing:border-box}
-html,body{height:100%}
+
 body{
   margin:0;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background: linear-gradient(180deg,var(--bg) 0%, #071020 100%);
-  color:#f8fafc;
+  font-family: "Playfair Display", serif;
+  background: #ffffff;
+  color:#070503;
   -webkit-font-smoothing:antialiased;
   line-height:1.45;
-  padding:2rem;
+  font-size: 14pt;
+  padding:4rem;
+}
+
+#portrait {
+  height: 5.8em;
 }
 
 /* page container */
@@ -46,6 +59,18 @@ body{
   gap:1rem;
   margin-bottom:2.25rem;
 }
+.contents {
+  margin-left: 20em;
+  margin-right: 20em;
+  margin-top: 2em;
+}
+.contents a {
+  text-decoration: none;
+  color:#070503;
+}
+.contents a:hover {
+  text-decoration: underline;
+}
 .cf-brand{
   display:flex;
   align-items:center;
@@ -61,7 +86,23 @@ body{
   box-shadow: 0 6px 18px rgba(255,106,0,0.12), inset 0 -4px 12px rgba(0,0,0,0.18);
 }
 .cf-title{font-weight:var(--fw-strong); font-size:1.05rem; letter-spacing:0.2px}
-
+.block-right-container {
+	display:flex;
+	width: 100%;
+	justify-content: right;
+}
+.block-center-container {
+	display:flex;
+	width: 100%;
+	justify-content: center;
+}
+h3 {
+	padding-top: 3em;
+	font-size: 120%;
+	font-weight: bold;
+	width: 100%;
+	border-bottom: 2px solid red;
+}
 /* simplified nav */
 .cf-nav{display:flex; gap:1rem; align-items:center;}
 .cf-nav a{color:var(--muted); text-decoration:none; font-size:.95rem}
@@ -157,6 +198,79 @@ body{
   gap:1rem;
 }
 
+    .tex sub, .latex sub, .latex sup {
+      text-transform: uppercase;
+    }
+
+    .tex sub, .latex sub {
+      vertical-align: -0.5ex;
+      margin-left: -0.1667em;
+      margin-right: -0.125em;
+    }
+
+    .tex, .latex, .tex sub, .latex sub {
+          line-height: 0;
+      font-size: 1em;
+    }
+
+    .latex sup {
+      font-size: 0.85em;
+      vertical-align: 0.15em;
+      margin-left: -0.36em;
+      margin-right: -0.15em;
+    }
+
+.resume-section {
+ 	margin: 2em 0em 2em 0em;
+}
+.resume-section p {
+	margin: 0em 2em 0em 2em;
+}
+
+.resume-section > h4 {
+	font-weight: bold;
+	font-size: 120%;
+	border-bottom: 2px gray solid;
+        width: 100%;
+}
+div.edu-line {
+	display: table;
+	width: 100%;
+}
+.edu-line > div {
+	display: table-cell;
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+}
+#bg-canvas {
+	z-index: -10;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+}
+.info-box {
+	display: none;
+	position: fixed;
+	width: 15em;
+	right: 0px;
+	top: 45%;
+	font-size: 80%;
+	color: #606060;
+	margin: 0 5em 0 0;
+
+}
+.ra {
+	    text-align-last: right;
+}
+.slim-section {
+	margin: 0 4em 0 4em;
+}
+.resume-head {
+	width: 100%;
+}
+#portrait-div {
+	float: right;
+}
 /* responsive */
 @media (max-width:960px){
   .cf-hero{grid-template-columns: 1fr; padding-top:1rem}
@@ -164,3 +278,4 @@ body{
   .cf-grid{grid-template-columns: 1fr; gap:.9rem}
   .cf-header{flex-direction:column; align-items:flex-start; gap:.6rem}
 }
+
