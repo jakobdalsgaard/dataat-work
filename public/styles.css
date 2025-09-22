@@ -275,11 +275,222 @@ div.edu-line {
 #portrait-div {
 	float: right;
 }
-/* responsive */
-@media (max-width:960px){
-  .cf-hero{grid-template-columns: 1fr; padding-top:1rem}
-  .cf-hero::before{display:none}
-  .cf-grid{grid-template-columns: 1fr; gap:.9rem}
-  .cf-header{flex-direction:column; align-items:flex-start; gap:.6rem}
+
+
+
+/* Mobile responsive styles */
+@media (max-width: 1200px) {
+  .contents {
+    margin-left: 10em;
+    margin-right: 10em;
+  }
 }
 
+@media (max-width: 960px) {
+  .cf-hero{
+    grid-template-columns: 1fr; 
+    padding-top:1rem;
+  }
+  .cf-hero::before{
+    display:none;
+  }
+  .cf-grid{
+    grid-template-columns: 1fr; 
+    gap:.9rem;
+  }
+  .cf-header{
+    flex-direction:column; 
+    align-items:flex-start; 
+    gap:.6rem;
+  }
+  
+  .contents {
+    margin-left: 3em;
+    margin-right: 3em;
+  }
+  
+  .slim-section {
+    margin: 0 2em 0 2em;
+  }
+}
+
+/* Tablet and mobile specific styles */
+@media (max-width: 768px) {
+  body {
+    padding: 2rem 1rem;
+    font-size: 13pt;
+  }
+  
+  .contents {
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  
+  .slim-section {
+    margin: 0 1em 0 1em;
+  }
+  
+  .resume-section p {
+    margin: 0em 1em 0em 1em;
+  }
+  
+  .block-right-container {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .contact-info {
+    text-align: center;
+  }
+  
+  /* Make the resume header stack vertically on mobile */
+  .resume-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  #portrait-div {
+    float: none;
+    margin-bottom: 1em;
+  }
+  
+  .contact-details {
+    text-align: center;
+  }
+  
+  /* Improve table-like layout for mobile */
+  .edu-line {
+    display: block;
+  }
+  
+  .edu-line > div {
+    display: block;
+    padding-bottom: 0.3em;
+    padding-top: 0.3em;
+  }
+  
+  .ra {
+    text-align: left;
+    font-style: italic;
+    font-size: 0.9em;
+    margin-bottom: 0.5em;
+  }
+  
+  /* Adjust list spacing */
+  .resume-section ul {
+    padding-left: 1.2em;
+  }
+  
+  .resume-section li {
+    margin-bottom: 0.5em;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+  body {
+    padding: 1rem 0.5rem;
+    font-size: 12pt;
+  }
+  
+  .contents {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+  }
+  
+  .slim-section {
+    margin: 0 0.5em 0 0.5em;
+  }
+  
+  .resume-section p {
+    margin: 0em 0.5em 0em 0.5em;
+  }
+  
+  #portrait {
+    height: 4em;
+  }
+  
+  h3 {
+    font-size: 110%;
+    padding-top: 2em;
+  }
+  
+  .resume-section > h4 {
+    font-size: 110%;
+  }
+  
+  /* Make the Cloudflare logo smaller on very small screens */
+  #cloudflare_logo {
+    max-width: 90%;
+  }
+  
+  /* Adjust spacing for very small screens */
+  .cf-header {
+    margin-bottom: 1rem;
+  }
+  
+  .cf-title {
+    font-size: 0.95rem;
+  }
+}
+
+/* Very small devices - extra adjustments */
+@media (max-width: 360px) {
+  body {
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+  
+  .contents {
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+  }
+  
+  .slim-section {
+    margin: 0 0.2em 0 0.2em;
+  }
+  
+  .resume-section p {
+    margin: 0em 0.2em 0em 0.2em;
+  }
+  
+  h3 {
+    font-size: 105%;
+  }
+  
+  #portrait {
+    height: 3.5em;
+  }
+}
+
+/* Touch-friendly improvements */
+@media (hover: none) and (pointer: coarse) {
+  /* Increase touch targets */
+  .contents a {
+    padding: 0.2em 0;
+    display: inline-block;
+  }
+  
+  /* Better line height for reading on mobile */
+  body {
+    line-height: 1.5;
+  }
+  
+  p {
+    margin-bottom: 1.2em;
+  }
+}
+
+/* Landscape orientation adjustments for mobile */
+@media (max-width: 896px) and (orientation: landscape) {
+  body {
+    padding: 1rem;
+  }
+  
+  .contents {
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+}
