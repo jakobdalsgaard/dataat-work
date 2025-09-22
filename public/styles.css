@@ -279,17 +279,10 @@ div.edu-line {
 
 
 /* Mobile responsive styles */
-@media (max-width: 1600px) {
-  .contents {
-    margin-left: 10em;
-    margin-right: 10em;
-  }
-}
-
 @media (max-width: 1200px) {
   .contents {
-    margin-left: 5em;
-    margin-right: 5em;
+    margin-left: 2em;
+    margin-right: 2em;
   }
 }
 
@@ -312,8 +305,8 @@ div.edu-line {
   }
   
   .contents {
-    margin-left: 3em;
-    margin-right: 3em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
   }
   
   .slim-section {
@@ -341,30 +334,16 @@ div.edu-line {
     margin: 0em 1em 0em 1em;
   }
   
-  .block-right-container {
-    justify-content: center;
-    text-align: center;
-  }
-  
-  .contact-info {
-    text-align: center;
-  }
   
   /* Make the resume header stack vertically on mobile */
   .resume-head {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
   }
   
   #portrait-div {
     float: none;
     margin-bottom: 1em;
-  }
-  
-  .contact-details {
-    text-align: center;
   }
   
   /* Improve table-like layout for mobile */
@@ -381,7 +360,6 @@ div.edu-line {
   .ra {
     text-align: left;
     font-style: italic;
-    font-size: 0.9em;
     margin-bottom: 0.5em;
   }
   
@@ -469,24 +447,6 @@ div.edu-line {
   
   #portrait {
     height: 3.5em;
-  }
-}
-
-/* Touch-friendly improvements */
-@media (hover: none) and (pointer: coarse) {
-  /* Increase touch targets */
-  .contents a {
-    padding: 0.2em 0;
-    display: inline-block;
-  }
-  
-  /* Better line height for reading on mobile */
-  body {
-    line-height: 1.5;
-  }
-  
-  p {
-    margin-bottom: 1.2em;
   }
 }
 
