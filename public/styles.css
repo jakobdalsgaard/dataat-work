@@ -279,6 +279,13 @@ div.edu-line {
 
 
 /* Mobile responsive styles */
+@media (max-width: 1600px) {
+  .contents {
+    margin-left: 13em;
+    margin-right: 13em;
+  }
+}
+
 @media (max-width: 1200px) {
   .contents {
     margin-left: 10em;
