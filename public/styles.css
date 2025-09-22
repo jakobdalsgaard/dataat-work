@@ -281,15 +281,15 @@ div.edu-line {
 /* Mobile responsive styles */
 @media (max-width: 1600px) {
   .contents {
-    margin-left: 13em;
-    margin-right: 13em;
+    margin-left: 10em;
+    margin-right: 10em;
   }
 }
 
 @media (max-width: 1200px) {
   .contents {
-    margin-left: 10em;
-    margin-right: 10em;
+    margin-left: 5em;
+    margin-right: 5em;
   }
 }
 
