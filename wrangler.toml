@@ -1,0 +1,45 @@
+# Data At Work - Cloudflare Worker Configuration
+# https://developers.cloudflare.com/workers/wrangler/configuration/
+
+name = "dataat-work"
+compatibility_date = "2025-09-13"
+main = "src/index.js"
+preview_urls = false
+
+[assets]
+directory = "./public"
+
+[observability]
+enabled = true
+
+# Send Email binding
+# Requires Email Routing to be enabled on the dataat.work domain
+# The sender address (contact@dataat.work) must be configured in Email Routing
+[[send_email]]
+name = "EMAIL"
+
+# Production route for https://dataat.work/
+[[routes]]
+pattern = "dataat.work/*"
+zone_name = "dataat.work"
+
+# Environment Variables / Secrets needed:
+# - TURNSTILE_SECRET: Your Turnstile secret key
+#
+# Setup steps:
+# 1. Turnstile CAPTCHA configuration:
+#
+#    LOCAL DEVELOPMENT (wrangler dev):
+#    - Secrets are loaded from .dev.vars file (not committed to git)
+#    - Test site key in contact.html: 1x00000000000000000000AA (always passes)
+#    - Test secret is pre-configured in .dev.vars
+#
+#    PRODUCTION (deployed worker):
+#    - Create a Turnstile widget at https://dash.cloudflare.com/?to=/:account/turnstile
+#    - Get the Site Key and update it in public/contact.html (data-sitekey attribute)
+#    - Get the Secret Key and deploy it: wrangler secret put TURNSTILE_SECRET
+#
+# 2. Enable Email Routing for dataat.work domain
+#    - Go to Email > Email Routing in Cloudflare dashboard
+#    - Enable Email Routing for the domain
+#    - The worker will send emails from contact@dataat.work
