@@ -8,7 +8,7 @@
 		"start": "wrangler dev"
 	},
 	"devDependencies": {
-		"wrangler": "^4.37.1"
+		"wrangler": "^4.61.1"
 	},
 	"dependencies": {
 		"mimetext": "^3.0.27"

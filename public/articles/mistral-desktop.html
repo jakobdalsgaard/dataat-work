@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Introducing Mistral Desktop — Data At Work</title>
+  <meta name="description" content="Mistral Desktop: A cross-platform Mistral AI client application developed at Data At Work. Featuring handy built-in tools, mindful of privacy and security.">
+  <link rel="icon" href="/small-logo.png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="/small-logo.png" alt="Data At Work" class="logo-img">
+        <span class="logo-text">Data At Work</span>
+      </a>
+      <nav class="main-nav">
+        <a href="/#services">Services</a>
+        <a href="/#approach">Approach</a>
+        <a href="/#articles">Articles</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <header class="article-header">
+        <div class="container">
+          <a href="/" class="back-link">← Back to Home</a>
+          <h1>Introducing Mistral Desktop</h1>
+          <p class="article-meta">January 2026 · Data At Work</p>
+        </div>
+      </header>
+
+      <div class="article-content">
+        <div class="container">
+          <p>
+            We're excited to announce <strong>Mistral Desktop</strong>, a cross-platform desktop
+            application for interacting with Mistral AI's language models. Built with our core
+            philosophy of mindful IT — it's designed to be useful, fast, and respectful of your
+            privacy and security.
+          </p>
+
+          <h2>Why Another AI Client?</h2>
+          <p>
+            Most AI chat interfaces are web-based, which means your conversations pass through
+            third-party servers, your data lives in someone else's cloud, and you're at the
+            mercy of service availability. We wanted something different.
+          </p>
+          <p>
+            Mistral Desktop runs locally on your machine. Your API key stays on your device.
+            Your conversation history is stored locally. When you're done, you close the app
+            and everything stays where it belongs — with you.
+          </p>
+
+          <h2>Built-in Tools, Built Mindfully</h2>
+          <p>
+            What makes Mistral Desktop particularly useful is its set of built-in tools that
+            extend what you can do with AI assistance:
+          </p>
+          <ul class="feature-list">
+            <li><strong>File Reader</strong> — Load documents, code files, and text directly into your conversation context</li>
+            <li><strong>Code Executor</strong> — Run Python snippets in a sandboxed environment to verify calculations or test ideas</li>
+            <li><strong>Web Fetcher</strong> — Pull content from URLs to discuss, summarize, or analyze</li>
+            <li><strong>Image Viewer</strong> — Share images with vision-capable models for analysis and description</li>
+            <li><strong>Export</strong> — Save conversations as Markdown or JSON for documentation and sharing</li>
+          </ul>
+
+          <div class="highlight-box">
+            <p>
+              <strong>Privacy note:</strong> All tools run locally. The File Reader doesn't upload
+              your files anywhere — it reads them on your machine and includes the content in your
+              API request. The Code Executor uses a sandboxed Python environment with no network
+              access. Your data stays yours.
+            </p>
+          </div>
+
+          <h2>Cross-Platform by Design</h2>
+          <p>
+            Mistral Desktop runs on Windows, macOS, and Linux. We've built it with Tauri,
+            which means you get a native application experience with a small footprint — no
+            Electron bloat, no running a full Chromium instance in the background.
+          </p>
+          <p>
+            The application is lightweight, starts quickly, and stays out of your way when
+            you're not using it. System tray integration lets you bring it up instantly
+            when you need it.
+          </p>
+
+          <h2>Security Considerations</h2>
+          <p>
+            We've thought carefully about security at every level:
+          </p>
+          <ul>
+            <li><strong>API Key Storage</strong> — Your Mistral API key is stored in your operating system's secure credential storage (Keychain on macOS, Credential Manager on Windows, Secret Service on Linux)</li>
+            <li><strong>No Telemetry</strong> — We don't collect usage data, analytics, or crash reports. The app doesn't phone home.</li>
+            <li><strong>Local History</strong> — Conversation history is stored in a local SQLite database. You can export it, delete it, or move it wherever you want.</li>
+            <li><strong>Sandboxed Execution</strong> — The code execution feature runs in a restricted environment with no filesystem access outside designated directories and no network access.</li>
+            <li><strong>Open Source</strong> — The code is available for review. You can build it yourself if you prefer.</li>
+          </ul>
+
+          <h2>Getting Started</h2>
+          <p>
+            Mistral Desktop requires a Mistral AI API key. If you don't have one, you can
+            get one from <a href="https://console.mistral.ai/">console.mistral.ai</a>. Mistral
+            offers a generous free tier that's suitable for personal use.
+          </p>
+          <p>
+            Download the latest release for your platform from our GitHub releases page.
+            Installation is straightforward — on macOS, drag to Applications; on Windows,
+            run the installer; on Linux, use the AppImage or install the .deb/.rpm package.
+          </p>
+
+          <h2>What's Next</h2>
+          <p>
+            We're actively developing Mistral Desktop and have several features in the pipeline:
+          </p>
+          <ul>
+            <li>Conversation templates and saved prompts</li>
+            <li>Multiple model support (switching between Mistral models)</li>
+            <li>Custom tool plugins</li>
+            <li>Keyboard-driven interface for power users</li>
+            <li>Local model support (for running open-weight models on your hardware)</li>
+          </ul>
+
+          <h2>Mindful Software</h2>
+          <p>
+            Mistral Desktop exemplifies what we mean by "mindful IT" at Data At Work. It's
+            mindful of cost — using your own API key means you pay only for what you use,
+            with no subscription overhead. It's mindful of performance — native code, small
+            footprint, fast startup. It's mindful of security — local processing, secure
+            credential storage, no data collection. And it's mindful of sovereignty — your
+            data stays on your machine, under your control.
+          </p>
+          <p>
+            We built this tool because we needed it ourselves. We hope you find it useful too.
+          </p>
+
+          <h2>Download Mistral Desktop</h2>
+          <p>
+            Choose the appropriate package for your operating system. All downloads include
+            checksums for verification.
+          </p>
+
+          <div class="download-section">
+            <div class="download-card">
+              <h3>Linux (Debian/Ubuntu)</h3>
+              <p>.deb package for 64-bit AMD/Intel systems</p>
+              <div class="download-info">
+                <span class="filename">mistral-desktop_0.1.0-1_amd64.deb</span>
+                <span class="filesize">2.4 MB</span>
+              </div>
+              <div class="download-actions">
+                <a href="/downloads/mistral-desktop/mistral-desktop_0.1.0-1_amd64.deb" class="download-button">Download .deb</a>
+              </div>
+              <div class="checksums">
+                <div class="checksum">
+                  <span class="checksum-label">SHA256:</span>
+                  <span class="checksum-value">40f2370d5810f300a40968da02d07bc1b5ffaaefb90f342c44370ac9601fdd0c</span>
+                  <button class="copy-button" onclick="copyToClipboard('40f2370d5810f300a40968da02d07bc1b5ffaaefb90f342c44370ac9601fdd0c')">Copy</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="download-card">
+              <h3>macOS (Apple Silicon)</h3>
+              <p>.pkg installer for Apple Silicon Macs (M1/M2/M3)</p>
+              <div class="download-info">
+                <span class="filename">Mistral_Desktop-aarch64-v0_1_0.pkg</span>
+                <span class="filesize">2.0 MB</span>
+              </div>
+              <div class="download-actions">
+                <a href="/downloads/mistral-desktop/Mistral_Desktop-aarch64-v0_1_0.pkg" class="download-button">Download .pkg</a>
+              </div>
+              <div class="checksums">
+                <div class="checksum">
+                  <span class="checksum-label">SHA256:</span>
+                  <span class="checksum-value">c600e322709313c934087fb12d02c0ed68fc88a0e6479c4e922d61b92d6b2953</span>
+                  <button class="copy-button" onclick="copyToClipboard('c600e322709313c934087fb12d02c0ed68fc88a0e6479c4e922d61b92d6b2953')">Copy</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <p>
+              <strong>Verification instructions:</strong> After downloading, verify the
+              integrity of the file using the provided SHA256 checksum. On Linux/macOS, use
+              <code>sha256sum filename</code>. On Windows, use
+              <code>CertUtil -hashfile filename SHA256</code>.
+            </p>
+          </div>
+
+          <div class="highlight-box">
+            <p>
+              <strong>Questions or feedback?</strong> Reach out at
+              <a href="mailto:hello@dataat.work">hello@dataat.work</a> or open an issue
+              on GitHub.
+            </p>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <script>
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(function() {
+        const button = event.target;
+        const originalText = button.textContent;
+        button.textContent = 'Copied!';
+        button.style.backgroundColor = '#4CAF50';
+        button.style.color = 'white';
+        
+        setTimeout(function() {
+          button.textContent = originalText;
+          button.style.backgroundColor = '';
+          button.style.color = '';
+        }, 2000);
+      }).catch(function(err) {
+        console.error('Failed to copy: ', err);
+      });
+    }
+  </script>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Data At Work. Mindful IT consultancy.</p>
+    </div>
+  </footer>
+</body>
+</html>
