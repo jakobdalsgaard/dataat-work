@@ -1,454 +1,142 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Jakob Dalsgaard - at work</title>
-    <link rel="icon" href="/favicon.png">
-    <link rel="stylesheet" href="/styles.css">
-  </head>
-  <body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data At Work — Mindful IT</title>
+  <meta name="description" content="Data At Work: IT company mindful of cost, performance, security, and sovereignty. Helping businesses optimize infrastructure, code, and architecture.">
+  <link rel="icon" href="/small-logo.png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="sunrise-bg">
+  <div class="sunrise-wrapper">
+    <header class="site-header site-header-transparent">
+    <div class="container">
+      <a href="/" class="logo">
+        <img src="/small-logo.png" alt="Data At Work" class="logo-img">
+        <span class="logo-text">Data At Work</span>
+      </a>
+      <nav class="main-nav">
+        <a href="#services">Services</a>
+        <a href="#approach">Approach</a>
+        <a href="#articles">Articles</a>
+        <a href="/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-<svg id="cloudflare_logo" xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 262 90" width="100%">
-  <path id="cloudflare_text" d="M253.827 69.103a2.16 2.16 0 0 1-2.173-2.173c0-1.175.962-2.173 2.173-2.173 1.175 0 2.173.962 2.173 2.173a2.21 2.21 0 0 1-2.173 2.173m0-3.918a1.75 1.75 0 0 0-1.745 1.745 1.75 1.75 0 0 0 1.745 1.745 1.75 1.75 0 0 0 1.745-1.745 1.75 1.75 0 0 0-1.745-1.745m1.104 2.885h-.5l-.427-.82h-.57v.82h-.463v-2.387h1.14c.5 0 .82.32.82.784a.74.74 0 0 1-.499.712l.5.9zm-.855-1.247c.178 0 .356-.107.356-.356 0-.285-.142-.356-.356-.356h-.712v.712h.712zM42.673 84.526h-15.2V64.543h5.557v15.138h9.653zm5.735-9.938v-.07c0-5.735 4.63-10.4 10.793-10.4s10.722 4.595 10.722 10.33v.07c0 5.735-4.63 10.4-10.793 10.4s-10.722-4.595-10.722-10.33m15.886 0v-.07c0-2.885-2.066-5.38-5.13-5.38-3.028 0-5.058 2.458-5.058 5.343v.07c0 2.885 2.066 5.38 5.094 5.38 3.063 0 5.094-2.458 5.094-5.343m12.43 1.175v-11.22h5.628v11.113c0 2.885 1.46 4.24 3.67 4.24s3.67-1.318 3.67-4.096V64.543h5.628V75.62c0 6.447-3.67 9.26-9.368 9.26-5.664 0-9.226-2.85-9.226-9.12m27.07-11.22h7.694c7.124 0 11.292 4.096 11.292 9.867v.07c0 5.77-4.203 10.045-11.398 10.045h-7.587V64.543zm7.8 15.067c3.313 0 5.52-1.817 5.52-5.058v-.07c0-3.206-2.208-5.058-5.52-5.058h-2.244v10.152h2.244zm24.756-6.803h9.475v4.595h-9.475v7.124h-5.52V64.543h15.993v4.844h-10.472zm33.376 11.72h-15.2V64.543h5.52v15.138h9.69zM184.19 64.4h5.343l8.513 20.125h-5.95l-1.46-3.562h-7.694l-1.425 3.562h-5.806L184.19 64.4zm4.88 12.253L186.862 71l-2.244 5.664h4.452zm16.1-12.11h9.44c3.063 0 5.165.784 6.518 2.173 1.175 1.14 1.78 2.67 1.78 4.666v.07c0 3.063-1.64 5.094-4.096 6.127l4.773 6.982h-6.412l-4.025-6.055h-2.422v6.055h-5.557V64.543zm9.2 9.582c1.888 0 2.956-.926 2.956-2.35v-.07c0-1.567-1.14-2.35-2.992-2.35h-3.633v4.773h3.67zm22.013-1.852h9.582v4.38h-9.582v3.17h10.722v4.702h-16.207V64.543h16.065v4.702h-10.58zM15.352 76.94c-.784 1.745-2.422 2.992-4.56 2.992-3.028 0-5.094-2.53-5.094-5.38v-.07c0-2.885 2.03-5.343 5.058-5.343 2.28 0 4.025 1.39 4.737 3.313h5.842c-.926-4.773-5.13-8.3-10.543-8.3C4.63 64.15 0 68.818 0 74.552v.07c0 5.735 4.56 10.33 10.722 10.33 5.272 0 9.404-3.42 10.472-7.98l-5.842-.036z" fill="#404041"/>
-  <path id="orange_cloud" d="M212.58 52.005c.748-2.565.463-4.916-.784-6.66-1.14-1.603-3.063-2.53-5.38-2.636l-43.848-.57a.81.81 0 0 1-.677-.356c-.142-.214-.178-.5-.107-.784.142-.427.57-.748 1.033-.784l44.24-.57c5.236-.25 10.935-4.488 12.93-9.69l2.53-6.6c.107-.285.142-.57.07-.855C219.74 9.617 208.234 0 194.485 0c-12.68 0-23.438 8.193-27.285 19.555-2.493-1.852-5.664-2.85-9.083-2.53-6.09.606-10.97 5.485-11.576 11.576-.142 1.567-.036 3.1.32 4.524-9.938.285-17.88 8.406-17.88 18.415 0 .9.07 1.78.178 2.67.07.427.427.748.855.748h80.928c.463 0 .9-.32 1.033-.784l.606-2.173z" fill="#f38020"/>
-  <path id="yellow_cloud" d="M226.543 23.83l-1.21.036c-.285 0-.534.214-.64.5l-1.7 5.95c-.748 2.565-.463 4.916.784 6.66 1.14 1.603 3.063 2.53 5.38 2.636l9.332.57a.81.81 0 0 1 .677.356c.142.214.178.534.107.784-.142.427-.57.748-1.033.784l-9.724.57c-5.272.25-10.935 4.488-12.93 9.69l-.712 1.817c-.142.356.107.712.5.712h33.41c.392 0 .748-.25.855-.64.57-2.066.9-4.24.9-6.483 0-13.18-10.757-23.937-23.972-23.937" fill="#faae40"/>
-</svg>
-
-
-
-
-<h1 class="cf-header">Jakob Dalsgaard<br/>applying for the job as<br/>Director of Adoption<br/>at Cloudflare</h1>
-<h1 class="cf-title">&mdash; by himself, September 18, 2025</h1>
-<div id="spacer"></div>
-<div class="contents">
-<h3 id="cover-letter">Abstract</h3>
-<p>This is an online version of the cover letter and resume that I have sent to Cloudflare. It's hosted on a hobby domain I have, fully hosted by Cloudflare.
-This page will attempt to send back a message to my Cloudflare worker for statistics; see the bottom of the page for a breakdown of page display time per continent.
-Thanks for reading.</p>
-<h3 id="cover-letter">Cover Letter</h3>
-<div class="block-right-container">
-<div>
-	Lykkebovej 44<br/>
-	2500 Valby<br/>
-	mobil: +45 2639 2739<br/>
-	email: jakob@dalsgaard.net<br/>
-	September 3, 2025<br/>
-</div>
-</div>
-
-Cloudflare<br/>
-London<br/>
-<br/>
-<p>To Whom It May Concern,</p>
-<p>I am hereby applying for the position of Engineering Director, Adoption at Cloudflare. I believe
-I would be a strong fit for this position, given my background as both developer and manager,
-particularly in SaaS businesses. When working for Zendesk I even had the pleasure of being a
-Cloudflare customer &mdash; I was leading the Operations team managing the Zendesk Help Center
-division, basically a Content Management System in the Zendesk application suite&mdash;a service
-that integrated extremely well with the core Cloudflare content delivery network, sporting custom
-certificates at scale and much, much more.</p>
-<p>Unfortunately, I do not live within 50 miles of any of your hubs, but London is just a short
-hop by plane away from Copenhagen, where I live &mdash; so please hear me out &mdash; after all, the job
-description does mention that Cloudflare does not believe we all fit into neat boxes; perhaps this
-is where I stick out a bit.</p>
-<p>There's a good chance I can make it to the office faster than by the M25.</p>
-<p>I have managed in, and worked in, SaaS companies with global presence, I have done so in
-both development and operations; and actually at all levels of operations, including vendor
-management and maintenance of co-location setups &mdash; I even installed machinery personally;
-leading by example. I have plenty of experience working with online vendor dashboards, with a
-focus on monitoring and alerting; I know a good and functional UI when I see it, such as yours;
-but I do have experience across many different solutions: Datadog, AWS, Solarwinds, Splunk and
-much more. I would be eager to use my experience and expertise to lead the Cloudflare product
-experience into the future. I've seen and tried countless development models and frameworks,
-and it;s clear that Cloudflare excels on technical quality and user experience. AWS is a mess in
-comparison.</p>
-<p>I see Cloudflare leading by providing clear working solutions to customers.</p>
-<p>Obviously, a functional and concise tech stack can be made to ensure this lead position; I know
-that, because I've been spearheading such implementations before. The aim is not to select
-'framework-of-the-week' but to make solid fact-based decisions, together.</p>
-<p>In my capacity as Chief of Staff to the CTO, I have been attending enterprise sales and technical
-support, I know what their focus is&mdash;and can act on this; I managed and mentored directors
-in Support, Operations and Professional Services in dealing with complex technical matters
-for enterprise customers and partners. My technical staff delivered dashboards, monitoring,
-integration aid and solutions with immediate and measurable effect on sales. Also, I am an eager
-hobbyist, using hobby projects for education, to stay up to date. It is remarkable how well hobby
-projects can scale to enterprise needs if done right. Please see my project links later in this cover
-letter. I've been running Linux since 1996, and I've never looked back. It just works. I might
-consider FreeBSD for the kqueue implementation though.</p>
-<p>Cloudflare, being a product lead company with a freemium model, is positioning the product
-as the major upsell contributor; and I see that it is working extremely well. I have an account
-personally, and I will not hesitate to buy services when I need - my confidence in the solution is
-high. As the product suite grows it is crucial for Cloudflare to keep the user interface performant
-and precise&mdash;thus instilling confidence. Regardless of the state of the internet and the customer
-infrastructure, Cloudflare is there, solid and ready to help; this is the vision that I would bring.</p>
-<p>I see Cloudflare positioning itself uniquely in the market as being both product driven yet tech-
-nically innovative and responsible. The services that Cloudflare delivers, such as web-workers,
-need to be considered carefully from a technical perspective in order to work reliably at the
-scale of your operations. Therefore it's a pleasure to see, in your documentation and tooling,
-that all Cloudflare offers come with clearly documented product limits, ensuring that customers
-know exactly what to expect. Not having product limits regularly tears down SaaS services;
-real technicians know that limits are needed to ensure reliability since resources will always be
-limited&mdash;this is a very valuable, mutual realization in a customer-vendor relationship.</p>
-<p>The best thing you can do to manage support and outbound sales cost is to have the product
-follow the customer journey and present options intuitively as the business case grows. Nothing
-beats that; I have personally lead product features from inception to launch, ensuring that the
-technical aim is not lost in translation and meeting transcripts; as is, unfortunately, a risk in large
-IT organisations. Undoubtedly my technical background and communicative skills are helping
-me out here.</p>
-<p>If my resume does not clearly document that I fullfill the needed key competencies, then allow
-me to add some more detail here: even from an early point in my career have I been able to
-transform team dynamics to the better, there has often been dire siturations in operations when
-dealing with SaaS infrastructure and its growing pain&mdash;I've lead my teams and other teams
-through distress and problems, growing together and delivering high pace deployment rates as
-well as reducing downtime; specifically for Zendesk, even with an aging application, I managed to
-improve uptime from 99.9% to 99.95% at no extra cost, through operational excellence and plain
-simple reconfiguration to be compliant with internet standards. In fact my operations teams had
-time to spare and was implementing product features when needed</p>
-<p>I would be happy to provide references that will testify to my immersive organisational skills;
-founded on technical excellence, curiosity and customer focus. I utterly enjoy transforming team
-dynamics, aligning stakeholders–and delivering products that live up to market demands. This
-enabled me to lead a new data center to completion in just 3 weeks, when experience said 6
-months.</p>
-<p>Obviously I would need to prove this level of technicality; while my direct contributions to open
-source are not numerous, they're delicate; I strive to improve what is already there, rather
-than delivering yet another half-hearted implementation. See for example this update to an
-implementation of the trie data structure in Rust: <a href="https://github.com/michaelsproul/rust_radix_trie">github.com/michaelsproul/rust_radix_trie</a>. I
-needed it for a project dealing with collation in Unicode, doing locale-based string sorting.</p>
-<p>In fact I have been following the Rust language for many years and it is now my go-to language
-(even though go-to is considered harmful). I could mention my Rust based basic webapp example:
-<a href="https://github.com/jakobdalsgaard/basic-webapp">github.com/jakobdalsgaard/basic-webapp</a>.</p>
-<p>As well as the WiFi bridge I did for a Wallas diesel boat heater; the software runs on an ESP32 em-
-bedded device, which shows the versatility of the Rust language: <a href="https://gitea.dalsgaard.net/dalsgaard/wallas-esp32c3">gitea.dalsgaard.net/dalsgaard/wallas-esp32c3</a>.
-Reverse engineering the serial interface to the heater was a real challenge.</p>
-<p>Being an avid beekeeper, I even managed to use this hobby for tech purposes: <a href="https://blog.dalsgaard.net/honey-we-need-a-website.html">blog.dalsgaard.net/honey-we-need-a-website.html</a>. This is a walk-through of configuring Nginx for maximum security score;
-I see network and security as some of my core technical focus points. Wireshark is one of my preferred tools and I navigate the 7 layers effortlessly. There are some proprietary high-availability
-protocols that I'm not fully into; but I've seen a lot.</p>
-<p>I would also like to mention that I've been lucky enough to meet your CTO, John Graham-
-Cumming, at the London office for an event some years ago&mdash;he's an inspiring leader, and not
-only technically; he would probably appreciate this resume and cover letter being produced in
-<span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> :-) &mdash; his blog post from July 2019 on the Cloudflare outage is stellar; not only for its
-technical in-depth explanations, but also from a customer- and employee-confidence point of
-view&mdash;having such a lighthouse example as a beacon to navigate by makes leading considerably
-easier.</p>
-<p>I've been a long-time admirer of the Cloudflare journey &mdash; I would be a great addition to your
-team. I am therefore looking forward to hearing from you,</p>
-
-<div class="block-center-container">
-<div>
-	Cordially,<br/>
-	<br/>
-	<br/>
-	Jakob Dalsgaard
-</div>
-</div>
-<h3 id="resume">Resume</h3>
-
-<div class="slim-section">
-<div class="resume-head">
-<div id="portrait-div">
-	<img id="portrait" src="portrait.jpeg">
-</div>
-<div>
-	Jakob Dalsgaard<br/>
-	mobile: +45 2639 2739<br/>
-	email: jakob@dalsgaard.net<br/>
-	linkedin.com/in/jakob-dalsgaard<br/>
-</div>
-</div>
-</div>
-
-<div class="resume-section">
-	<h4>Summary</h4>
-	<p>In a world that is changing rapidly, I help companies transition and stay ahead. Not only by clear
-data-driven decisions, but also by leading and innovating. While the current use of AI is primarily as
-automation-agumenter—I can help prepare and adapt for future gains.</p>
-	<p>Being highly skilled and well-versed in a plethora of technologies through decades of experience in the
-IT industry, and with a broad background across multiple sectors in both B2C and B2B, such as
-telecom, finance, security, and shipping, is enabling me to dive into all relevant parts of an IT
-business.</p>
-	<p>I aim to have people collaborate to move the business further and ahead, doing so by challenging silos
-and gathering data that all can agree on; having the deep technical knowledge as well as product and
-customer flair is an immense catalyst for clear results through cross-departmental work efforts.</p>
-</div>
-
-<div class="resume-section">
-	<h4>Work Experience</h4>
-	<div class="slim-section">
-	<div class="edu-line">
-		<div>
-			<b>Chief of Staff for Engineering</b><br/>
-		  <i>Keepit</i><br/>
-		</div>
-		<div class="ra">
-			May 2022 - May 2025<br/>
-			<i>Copenhagen, Denmark</i>
-		</div>
-	</div>
-	<p>
-	  <ul>
-			<li>Managing Operations, Technical Support and Internal IT globally (approximately 50 people in total, through
-				almost all time zones) &mdash; scaling throughput by automation, quality through ownership.</li>
-<li>Engaging in customer and partner negotiations at a global level, visiting major clients and partners globally,
-	attending and doing talks at industry and sales conferences &mdash; played a key role in securing multiple deals globally.</li>
-<li>Resource and finance forecasting in all aspects of running on-prem at multiple locations globally; ensuring and
-leading C-level reporting on key indicators both commercially and technically by automation and tools. Delivered
-the Swiss datacenter in record time, thus securing deals.</li>
-<li>Leading implementation and documentation of a number of industry compliance requirements: ISO-27001, SOC2,
-	HIPA and Dora.</li>
-<li>Technical ligthouse for Engineering, Operations and Technical Support; leading transformation of work agendas,
-culture and organisation to scale and adapt. Implemented and lead automated procedures for escalation and
-incident management with communication strategies for customers, employees and C-level.</li>
-<li>Relatable and caring manager with a focus on the people that make the business.</li>
-<li><i>Tech:</i> C++, Lisp, SQL, Debian, Ubuntu, Python, Grafana, Jupyter notebook, nginx, React, Javascript, XSLT,
-		Ansible, Azure, git, Wireshark.</li>
-		</ul>
-	</p>
-
-	<div class="edu-line">
-		<div>
-			<b>Operations Manager</b><br/>
-		  <i>Zendesk</i><br/>
-		</div>
-		<div class="ra">
-			November 2014 - April 2022<br/>
-			<i>Copenhagen, Denmark</i>
-		</div>
-	</div>
-	<p>
-	  <ul>
-		  <li>Developing and maintaining data center based and cloud based infrastructure. Lead the transition from co-location
-			  to fully public cloud.</li>
-<li>Technical team management; building cross-european and global technical culture &mdash; increasing technical quality and
-	talent attachment.</li>
-<li>On Call management and participation, both follow the sun globally and geographically confined across Europe.
-	<li>Cost management and planning; working with finance on a daily basis. Joining business numbers with technical
-monitors - building a knowledge in the technical organisation of the MRR divide across customer base and
-infrastructure.</li>
-<li>People Management - team of approximately 6-8 people, scattered over Europe, organizing cultural events, tech
-	meetups and structured technical talks.</li>
-<li><i>Tech:</i> Golang, Python, Ruby, Chef, Cloudformation, Datadog, PagerDuty, XSLT, SQL, Java, Scala, Elasticsearch,
-	Opensearch, AWS, GCP, git, Ubuntu, Wireshark, Cloudflare.</li>
-</ul>
-	</p>
-
-		<div class="edu-line">
-		<div>
-			<b>IT Consultant</b><br/>
-		  <i>Independent</i><br/>
-		</div>
-		<div class="ra">
-			September 2006 - November 2014<br/>
-			<i>Copenhagen, Denmark</i>
-		</div>
-	</div>
-	<p>
-	  <ul>
-		  <li>Nordea (bank); Java developer for the private banking branch - doing a mixture of frontend and backend work for
-			  an online trading platform.</li>
-<li>Skandinavisk Data Center (bank); Java developer for bank advisor applications and portals.</li>
-	<li>Nokia; configuration management with CM/Synergy for embedded C-based software; tasks included automation of
-		build infrastructure, largely based on bash/python.</li>
-<li>IBM Transport & Logistics; Development and operational maintenance of business critical Java Websphere
-	applications on Solaris hardware for M&aelig;rsk.</li>
-<li>Tech: Linux, Solaris, bash, python, Java</li>
-</ul>
-	</p>
-
-		<div class="edu-line">
-		<div>
-			<b>IT Consultant</b><br/>
-		  <i>Cyber Com Consulting</i><br/>
-		</div>
-		<div class="ra">
-			April 2003 - August 2006<br/>
-			<i>Copenhagen, Denmark</i>
-		</div>
-	</div>
-	<p>
-	  <ul>
-		  <li>Teaching Websphere Management for Mærsk, including the needed skills in TCL for automation of tasks.</li>
-		  <li>Working for Sony Ericsson on their online production and marketing platform, an on-prem setup with global</li>
-presence augmented by Akamai, delivering world-wide sub-second page displays.
-<li><i>Tech:</i> Java, Linux, Solaris, Akamai, CM/Synergy, CVS</li>
-</ul>
-	</p>
-		<div class="edu-line">
-		<div>
-			<b>Lead Developer</b><br/>
-		  <i>Neupart ApS</i><br/>
-		</div>
-		<div class="ra">
-			May 2002 - March 2003<br/>
-			<i>Copenhagen, Denmark</i>
-		</div>
-	</div>
-	<p>
-	  <ul>
-		  <li>Development of E-learning platform for IT security; as a deliverable for customers to install across Windows and
-			  Linux.</li>
-<li>Creating tools to measure implementation of DIN (Deutsches Institut für Normung) and DS (Dansk Standard)
-	compliance.</li>
-<li><i>Tech:</i> Java, XSLT, Jetty (java webserver), Debian</li>
-</ul>
-	</p>
-
-	<div class="edu-line">
-		<div>
-			<b>System Integrator / Software Developer</b><br/>
-		  <i>Caput</i><br/>
-		</div>
-		<div class="ra">
-			March 1998 - April 2002<br/>
-			<i>Copenhagen, Denmark</i>
-		</div>
-	</div>
-	<p>
-	  <ul>
-		  <li>Ad Hoc Development on Redhat Linux for various customers, primarily web-based applications.</li>
-			  <li>Oracle database management, install, and querying for business reporting.</li>
-				  <li>Website and CMS management and development.</li>
-					  <li>Customer dialogue, requirements gathering and project management; some engineering team management as well.</li>
-					  <li><i>Tech:</i> Debian, Linux, Java, C++, bash</li>
-</ul>
-	</p>
-
-
-</div>
-
-<div class="resume-section">
-	<h4>Education</h4>
-	<div class="slim-section">
-	<div class="edu-line">
-		<div>
-		Technical University of Denmark<br/>
-		<i>Master of Science in Engineering - Applied Mathematics and Information Technology</i><br/>
-		&nbsp;&middot; Master Thesis: Signal Analysis with Overcomplete Systems
-		</div>
-		<div class="ra">
-			Lyngby, Denmark<br/>
-			<i>August 1995 - September 2001</i>
-		</div>
-	</div>
-	<div class="edu-line">
-		<div>
-			High School<br/>
-			<i>Mathematical Line</i>
-		</div>
-		<div class="ra">
-			Horsens, Denmark<br/>
-			<i>August 1991 - June 2004</i>
-		</div>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Data At Work</h1>
+				<div class="hero-card">
+        <div class="mindful-pillars">
+          <span>Mindful of cost</span>
+          <span class="separator">·</span>
+          <span>Mindful of performance</span>
+          <span class="separator">·</span>
+          <span>Mindful of security</span>
+          <span class="separator">·</span>
+          <span>Mindful of sovereignty</span>
         </div>
-	</div>
-</div>
+        <p class="hero-description">
+          Helping IT businesses optimize their infrastructure, their code, their architecture.
+          We bring decades of experience in operations, development, and technical leadership
+          to help you build systems that work — efficiently, securely, and sustainably.
+        </p>
+        <a href="/contact.html" class="cta-button">Get in Touch</a>
+      </div>
+			</div>
+    </section>
 
-<div class="resume-section">
-	<h4>Skills</h4>
-	<p><b>Development Languages:</b> Rust, Go, Node, Python, Ruby, Perl, bash, XSLT, SQL</p>
-	<p><b>Spoken Languages:</b> Danish (native), English (fluent in writing and speech), French (basic), German (basic)</p>
-</div>
+    <section id="services" class="services">
+      <div class="container">
+        <h2>What We Do</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Infrastructure Optimization</h3>
+            <p>Reduce costs and improve reliability. We analyze your cloud spend,
+            identify inefficiencies, and implement solutions that scale without
+            breaking the bank.</p>
+          </div>
+          <div class="service-card">
+            <h3>Code & Architecture Review</h3>
+            <p>Performance bottlenecks, security vulnerabilities, technical debt —
+            we find them and fix them. Deep technical expertise across multiple
+            languages and frameworks.</p>
+          </div>
+          <div class="service-card">
+            <h3>DevOps & Operations</h3>
+            <p>From CI/CD pipelines to monitoring and alerting, incident management
+            to capacity planning. We help you build operational excellence.</p>
+          </div>
+          <div class="service-card">
+            <h3>Technical Leadership</h3>
+            <p>Fractional CTO services, team mentoring, and technical strategy.
+            Navigate complex decisions with experienced guidance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section id="approach" class="approach">
+      <div class="container">
+        <h2>Our Approach</h2>
+        <div class="pillars-grid">
+          <div class="pillar">
+            <h3>Cost-Conscious</h3>
+            <p>Every dollar spent on infrastructure should deliver value. We help you
+            find the right balance between capability and cost, avoiding both
+            over-provisioning and false economies.</p>
+          </div>
+          <div class="pillar">
+            <h3>Performance-Focused</h3>
+            <p>Fast systems make happy users and efficient operations. We measure,
+            profile, and optimize — always with real data, never with assumptions.</p>
+          </div>
+          <div class="pillar">
+            <h3>Security-First</h3>
+            <p>Security is not an afterthought. We build it in from the start, following
+            industry best practices and keeping up with emerging threats.</p>
+          </div>
+          <div class="pillar">
+            <h3>Sovereignty-Aware</h3>
+            <p>Your data, your rules. We help you navigate data residency requirements,
+            choose the right providers, and maintain control over your systems.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section id="articles" class="articles">
+      <div class="container">
+        <h2>Articles & Projects</h2>
+        <div class="articles-list">
+          <article class="article-card">
+            <span class="article-date">January 2026</span>
+            <h3><a href="/articles/mistral-desktop.html">Introducing Mistral Desktop</a></h3>
+            <p>A cross-platform Mistral AI client application developed at Data At Work.
+            Featuring handy built-in tools — but mindful of privacy and security.</p>
+            <a href="/articles/mistral-desktop.html" class="read-more">Read more →</a>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<h3 id="postscript">Postscript</h3>
-<p>Thank you so much for scrolling all the way down here. As promised, here is a short report on page display time per continent, generated by a Cloudflare worker with a Durable Object.</p>
+    <section class="cta-section">
+      <div class="container">
+        <h2>Ready to optimize your IT operations?</h2>
+        <p>Let's talk about how we can help your business.</p>
+        <a href="/contact.html" class="cta-button">Contact Us</a>
+      </div>
+    </section>
+  </main>
 
-<p id="display-report">Awaiting report from Cloudflare worker..</p>
-
-
-</div>
-    <script type="text/javascript">
-      function onLoaded () {
-        // set the spacer height
-	      var cloudflare_logo = document.getElementById("cloudflare_logo");
-				var spacer = document.getElementById("spacer");
-				spacer.style.height = "0px";
-				var logo_bottom = cloudflare_logo.getBoundingClientRect().bottom;
-				var spacer_bottom = spacer.getBoundingClientRect().bottom;
-				if (logo_bottom != spacer_bottom) {
-					spacer.style.height = "" + Math.ceil(logo_bottom - spacer_bottom - window.scrollY) + "px";
-				}
-
-        window.addEventListener("resize", adjustSpacer(spacer, cloudflare_logo));
-        adjustSpacer(spacer, cloudflare_logo)();
-
-
-	      // set up the opacity of the logo to follow sine curves offset to 0.9-1.0 evenly
-				// distributed on the unit circle.
-	      var cloudflare_text = document.getElementById("cloudflare_text");
-	      var orange_cloud = document.getElementById("orange_cloud");
-	      var yellow_cloud = document.getElementById("yellow_cloud");
-	      var shade = () => { 
-		      var base_rad = Date.now() / 1000;
-		      cloudflare_text.style.opacity = 0.9 + Math.sin(base_rad)/10;
-		      orange_cloud.style.opacity = 0.9 + Math.sin(base_rad + 2/3*Math.PI)/10;
-		      yellow_cloud.style.opacity = 0.9 + Math.sin(base_rad + 4/3*Math.PI)/10;
-		      setTimeout(shade, 100);
-	      };
-	      shade();
-
-	     // set up listener to scroll svg logo elements out of view when
-             // the page is being scrolled.
-             window.addEventListener("scroll", scrollLogo(cloudflare_text, orange_cloud, yellow_cloud));
-
-	      // send usage statistics home
-				reportTimeSpent(Date.now())();
-
-      }
-    
-			function adjustSpacer(spacer, logo) {
-				return function () {
-				  spacer.style.height = "0px";
-				  var logo_bottom = logo.getBoundingClientRect().bottom;
-				  var spacer_bottom = spacer.getBoundingClientRect().bottom;
-				  if (logo_bottom != spacer_bottom) {
-					  spacer.style.height = "" + Math.ceil(logo_bottom - spacer_bottom - window.scrollY) + "px";
-				  }
-				}
-			}
-				  
-      function reportTimeSpent(since) {
-        return function () {
-					var now = Date.now();
-					var time_spent = Math.floor((now - since)/1000);
-					if (time_spent > 0) {
-						var url = `/api/report/${time_spent}`;
-						window.fetch(url).then( response => response.text()).then(text => {
-								document.getElementById("display-report").innerText = text;
-							}).catch(
-								(error) => {
-									console.log(`Error calling ${url}`);
-								});
-					} 
-					setTimeout(reportTimeSpent(now), 5000);
-				}
-			}
-
-
-        function isVisible(value) {
-            const item = value.getBoundingClientRect();
-            return (
-                item.top >= 0 &&
-                item.left >= 0 &&
-                item.bottom <= (
-                    window.innerHeight ||
-                    document.documentElement.clientHeight) &&
-                item.right <= (
-                    window.innerWidth ||
-                    document.documentElement.clientWidth)
-            );
-        }
-
-      function scrollLogo(text, orange, yellow) {
-        return function () {
-          var scroll = window.scrollY;
-          var xlate = scroll*scroll/1000;
-          text.setAttribute('transform', `translate(0, -${xlate})`);
-          orange.setAttribute('transform', `translate(${xlate/1.4142}, -${xlate/1.4142})`);
-          yellow.setAttribute('transform', `translate(${xlate}, 0)`);
-	}
-      }
-
-      document.addEventListener("DOMContentLoaded", onLoaded);
-    </script>
-  </body>
+  <footer class="site-footer site-footer-transparent">
+    <div class="container">
+      <p>&copy; 2026 Data At Work. A mindful IT company. Based in Europe.</p>
+    </div>
+  </footer>
+  </div>
+</body>
 </html>

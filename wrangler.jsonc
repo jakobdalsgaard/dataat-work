@@ -1,64 +1,40 @@
 /**
- * For more details on how to configure Wrangler, refer to:
+ * Data At Work - Cloudflare Worker Configuration
  * https://developers.cloudflare.com/workers/wrangler/configuration/
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "cloudflare-worker",
-	"compatibility_date": "2025-09-17",
+	"name": "dataat-work",
+	"compatibility_date": "2025-09-13",
+	"main": "src/index.js",
 	"assets": {
-		// The path to the directory containing the `index.html` file to be served at `/`
 		"directory": "./public"
 	},
 	"observability": {
 		"enabled": true
 	},
-	  "main": "src/index.js",
-	  "durable_objects": {
-            "bindings": [
-            {
-               "class_name": "ReportObject",
-            "name": "REPORT_OBJECTS"
-      }
-    ]
-  },
-  "migrations": [
-    {
-      "tag": "v1",
-      "new_sqlite_classes": [
-        "ReportObject"
-      ]
-    }
-  ],
-
 	/**
-	 * Smart Placement
-	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
+	 * Send Email binding
+	 * Requires Email Routing to be enabled on the dataat.work domain
+	 * The sender address (contact@dataat.work) must be configured in Email Routing
 	 */
-	// "placement": { "mode": "smart" }
+	"send_email": [
+		{
+			"name": "EMAIL"
+		}
+	]
 	/**
-	 * Bindings
-	 * Bindings allow your Worker to interact with resources on the Cloudflare Developer Platform, including
-	 * databases, object storage, AI inference, real-time communication and more.
-	 * https://developers.cloudflare.com/workers/runtime-apis/bindings/
+	 * Environment Variables / Secrets needed:
+	 * - TURNSTILE_SECRET: Your Turnstile secret key (set via `wrangler secret put TURNSTILE_SECRET`)
+	 *
+	 * Setup steps:
+	 * 1. Create a Turnstile widget at https://dash.cloudflare.com/?to=/:account/turnstile
+	 *    - Get the Site Key and update it in public/index.html (data-sitekey attribute)
+	 *    - Get the Secret Key and add it: `wrangler secret put TURNSTILE_SECRET`
+	 *
+	 * 2. Enable Email Routing for dataat.work domain
+	 *    - Go to Email > Email Routing in Cloudflare dashboard
+	 *    - Enable Email Routing for the domain
+	 *    - The worker will send emails from contact@dataat.work
 	 */
-	/**
-	 * Environment Variables
-	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
-	 */
-	// "vars": { "MY_VARIABLE": "production_value" }
-	/**
-	 * Note: Use secrets to store sensitive data.
-	 * https://developers.cloudflare.com/workers/configuration/secrets/
-	 */
-	/**
-	 * Static Assets
-	 * https://developers.cloudflare.com/workers/static-assets/binding/
-	 */
-	// "assets": { "directory": "./public/", "binding": "ASSETS" }
-	/**
-	 * Service Bindings (communicate between multiple Workers)
-	 * https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings
-	 */
-	// "services": [{ "binding": "MY_SERVICE", "service": "my-service" }]
 }
